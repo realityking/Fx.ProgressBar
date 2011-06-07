@@ -30,7 +30,7 @@ Fx.ProgressBar = new Class({
 		this.element.set('aria-valuenow', '0');
 		this.element.set('aria-valuemin', '0');
 		this.element.set('aria-valuemax', '100');
-				
+
 		var url = this.options.url;
 		if (url) {
 			this.element.setStyles({
@@ -38,7 +38,7 @@ Fx.ProgressBar = new Class({
 				'background-repeat': 'no-repeat'
 			});
 		}
-		
+
 		if (this.options.fit) {
 			url = url || this.element.getStyle('background-image').replace(/^url\(["']?|["']?\)$/g, '');
 			if (url) {
@@ -68,11 +68,10 @@ Fx.ProgressBar = new Class({
 		
 		this.element.setStyle('backgroundPosition', css + ' 0px').title = Math.round(to) + '%';
 		this.element.set('aria-valuenow', to);
-		
+
 		var text = $(this.options.text);
 		if (text) text.set('text', Math.round(to) + '%');
-		
+
 		return this;
 	}
-
 });
