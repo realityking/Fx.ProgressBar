@@ -18,7 +18,8 @@ Fx.ProgressBar = new Class({
 		url: null,
 		transition: Fx.Transitions.Circ.easeOut,
 		fit: true,
-		link: 'cancel'
+		link: 'cancel',
+		html5: true
 	},
 
 	initialize: function(element, options) {
@@ -30,6 +31,12 @@ Fx.ProgressBar = new Class({
 		this.element.set('aria-valuenow', '0');
 		this.element.set('aria-valuemin', '0');
 		this.element.set('aria-valuemax', '100');
+
+		if (this.options.html5) {
+			this.progressElement = new Element('progress').wraps(this.element);
+			this.progressElement.max = 100;
+			this.progressElement.value = 0;
+		}
 
 		var url = this.options.url;
 		if (url) {
@@ -68,6 +75,10 @@ Fx.ProgressBar = new Class({
 		
 		this.element.setStyle('backgroundPosition', css + ' 0px').title = Math.round(to) + '%';
 		this.element.set('aria-valuenow', to);
+
+		if (this.options.html5) {
+			this.progressElement.value = to;
+		}
 
 		var text = $(this.options.text);
 		if (text) text.set('text', Math.round(to) + '%');
