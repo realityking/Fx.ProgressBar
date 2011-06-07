@@ -6,6 +6,7 @@
  * @license		MIT License
  *
  * @author		Harald Kirschner <mail [at] digitarald [dot] de>
+ * @author		Rouven Weßling <me [at] rouvenwessling [dot] de>
  * @copyright	Authors
  */
 
