@@ -24,6 +24,12 @@ Fx.ProgressBar = new Class({
 	initialize: function(element, options) {
 		this.element = $(element);
 		this.parent(options);
+
+		//WAI-ARIA
+		this.element.set('role', 'progressbar');
+		this.element.set('aria-valuenow', '0');
+		this.element.set('aria-valuemin', '0');
+		this.element.set('aria-valuemax', '100');
 				
 		var url = this.options.url;
 		if (url) {
@@ -61,6 +67,7 @@ Fx.ProgressBar = new Class({
 			: ((100 - to) + '%');
 		
 		this.element.setStyle('backgroundPosition', css + ' 0px').title = Math.round(to) + '%';
+		this.element.set('aria-valuenow', to);
 		
 		var text = $(this.options.text);
 		if (text) text.set('text', Math.round(to) + '%');
