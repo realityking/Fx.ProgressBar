@@ -1,14 +1,18 @@
-/**
- * Fx.ProgressBar
- *
- * @version		1.2
- *
- * @license		MIT License
- *
- * @author		Harald Kirschner <mail [at] digitarald [dot] de>
- * @author		Rouven Weßling <me [at] rouvenwessling [dot] de>
- * @copyright	Authors
- */
+/*
+name: Fx.ProgressBar
+
+description: Creates a progressbar with WAI-ARIA and optional HTML5 support.
+
+license: MIT-style
+
+authors:
+- Harald Kirschner <mail [at] digitarald [dot] de>
+- Rouven Weßling <me [at] rouvenwessling [dot] de>
+
+requires: [Core/Fx, Core/Class, Core/Element]
+
+provides: Fx.ProgressBar
+*/
 
 Fx.ProgressBar = new Class({
 
