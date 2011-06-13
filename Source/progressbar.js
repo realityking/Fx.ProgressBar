@@ -28,7 +28,7 @@ Fx.ProgressBar = new Class({
 	},
 
 	initialize: function(element, options) {
-		this.element = $(element);
+		this.element = document.id(element);
 		this.parent(options);
 
 		//WAI-ARIA
@@ -85,7 +85,7 @@ Fx.ProgressBar = new Class({
 			this.progressElement.value = to;
 		}
 
-		var text = $(this.options.text);
+		var text = document.id(this.options.text);
 		if (text) text.set('text', Math.round(to) + '%');
 
 		return this;
